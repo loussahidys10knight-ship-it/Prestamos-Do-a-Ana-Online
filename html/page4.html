@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de prÃ©stamo</title>
+  <link rel="stylesheet" href="/css/styles-complete.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Solicitud de prÃ©stamo</h1>
+  <form id="formPrestamo" novalidate>
+    <fieldset>
+      <legend>InformaciÃ³n laboral</legend>
+
+      <label for="ocupacion">OcupaciÃ³n</label>
+      <input type="text" id="ocupacion" name="ocupacion" data-validar="soloLetras" required maxlength="30" placeholder="Ejemplo: Empleado, comerciante...">
+      <span class="error-msg"></span>
+
+      <label for="ingresos">Ingresos mensuales</label>
+      <input type="text" id="ingresos" name="ingresos" data-validar="monto" required inputmode="decimal" placeholder="En moneda local">
+      <span class="error-msg"></span>
+    </fieldset>
+
+    <fieldset>
+      <legend>Solicitud de prÃ©stamo</legend>
+
+      <label for="monto">Monto solicitado</label>
+      <input type="text" id="monto" name="monto" data-validar="monto" required inputmode="decimal" data-min="1000" placeholder="Ejemplo: 5000">
+      <span class="error-msg"></span>
+
+      <label for="plazo">Plazo (meses)</label>
+      <input type="text" id="plazo" name="plazo" data-validar="soloNumeros" required inputmode="numeric" maxlength="2" data-min="1" data-max="60" placeholder="Ejemplo: 12">
+      <span class="error-msg"></span>
+
+      <div class="resumen-cuotas" id="resumenCuotas" aria-live="polite">
+        <p><strong>Cargo de servicio:</strong> <span id="resumenCargo">10%</span></p>
+        <p><strong>Total a pagar:</strong> <span id="resumenTotal">$0.00</span></p>
+        <p><strong>Cuota mensual:</strong> <span id="resumenCuota">$0.00</span></p>
+      </div>
+
+      <label for="tipo">Tipo de prestamo</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">Selecciona una opciÃ³n</option>
+        <option value="personal">Personal</option>
+        <option value="educativo">Educativo</option>
+        <option value="automotriz">Automotriz</option>
+        <option value="otro">Otro</option>
+      </select>
+      <span class="error-msg"></span>
+    </fieldset>
+
+    <fieldset>
+      <legend>InformaciÃ³n bancaria</legend>
+
+      <label for="banco">Banco</label>
+      <input type="text" id="banco" name="banco" data-validar="soloLetras" required maxlength="30" placeholder="Nombre del banco">
+      <span class="error-msg"></span>
+
+      <label for="cuenta">NÃºmero de cuenta</label>
+      <input type="text" id="cuenta" name="cuenta" data-validar="numeroCuenta" required inputmode="numeric" maxlength="25" placeholder="Ejemplo: 12345678901">
+      <span class="error-msg"></span>
+    </fieldset>
+
+    <button type="submit">Solicitar prÃ©stamo</button>
+    <p id="mensaje" class="success"></p>
+  </form>
+</div>
+
+<section class="metodos-pago">
+  <div class="container metodos-pago-contenedor">
+    <h1 class="lix">MÃ©todos de pago</h1>
+    <div class="logos-pago">
+      <a href="https://www.visa.com.do" target="_blank"><img src="/img/visa.png" class="visa" alt="Visa"></a>
+      <a href="https://www.paypal.com/do/home" target="_blank"><img src="/img/paypal.png" class="paypal" alt="PayPal"></a>
+      <a href="https://www.mercadopago.com.ar" target="_blank"><img src="/img/mercado pago.png" class="mercado" alt="Mercado Pago"></a>
+      <a href="https://www.mastercard.com/us/en.html" target="_blank"><img src="/img/mastercard.png" class="mastercard" alt="Mastercard"></a>
+    </div>
+  </div>
+</section>
+
+<script src="/JavaScript/validation.js"></script>
+<script src="/JavaScript/api-client.js"></script>
+<script src="/JavaScript/user-manager.js"></script>
+<script src="/JavaScript/loan-manager.js"></script>
+<script src="/JavaScript/modal-render.js"></script>
+<script src="/JavaScript/events.js"></script>
+<script src="/JavaScript/page-prestamos.js"></script>
+
+</body>
+</html>

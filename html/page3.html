@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse</title>
+  <link rel="stylesheet" href="/css/styles-complete.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Crear cuenta</h1>
+  <form id="formRegistro" novalidate>
+    <fieldset>
+      <legend>Datos de usuario</legend>
+
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" data-validar="soloLetras" required maxlength="50" autocomplete="name" placeholder="Ejemplo: Ana López">
+      <span class="error-msg"></span>
+
+      <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" name="correo" data-validar="email" required autocomplete="email" placeholder="ejemplo@correo.com">
+      <span class="error-msg"></span>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" data-validar="telefono" required autocomplete="tel" inputmode="numeric" maxlength="15" placeholder="Ejemplo: 8095551234">
+      <span class="error-msg"></span>
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" data-validar="contrasena" required minlength="8" maxlength="30" autocomplete="new-password" placeholder="Mínimo 8 caracteres">
+      <span class="error-msg"></span>
+
+      <label for="confirm-password">Confirmar contraseña</label>
+      <input type="password" id="confirm-password" name="confirm-password" required minlength="8" maxlength="30" autocomplete="new-password" placeholder="Repite tu contraseña">
+      <span class="error-msg"></span>
+
+      <label class="checkbox-label" for="terminos">
+        <input type="checkbox" id="terminos" name="terminos" required>
+        Acepto los <a href="terminos.html" target="_blank">terminos y condiciones</a> y la <a href="privacidad.html" target="_blank">politica de privacidad</a>
+      </label>
+      <span class="error-msg"></span>
+
+      <div class="grupo-codigo-registro" id="grupoCodigoRegistro" style="display: none;">
+        <label for="codigoRegistro">Código de verificación</label>
+        <input type="text" id="codigoRegistro" name="codigoRegistro" data-validar="soloNumeros" inputmode="numeric" maxlength="6" placeholder="Ingresa el código de 6 dígitos">
+        <span class="error-msg"></span>
+        <div class="codigo-acciones">
+          <button class="btn-secundario" type="button" id="btnReenviarCodigo">Reenviar código</button>
+          <button class="btn-secundario" type="button" id="btnCorregirCorreo">Corregir correo</button>
+        </div>
+      </div>
+    </fieldset>
+
+    <button class="btn-primario" type="submit" id="btnRegistro">Enviar código</button>
+    <p id="mensaje" class="success"></p>
+  </form>
+</div>
+
+<script src="/JavaScript/validation.js"></script>
+<script src="/JavaScript/api-client.js"></script>
+<script src="/JavaScript/user-manager.js"></script>
+<script src="/JavaScript/loan-manager.js"></script>
+<script src="/JavaScript/modal-render.js"></script>
+<script src="/JavaScript/events.js"></script>
+<script src="/JavaScript/email-notifications.js"></script>
+<script src="/JavaScript/page-registro.js"></script>
+
+</body>
+</html>

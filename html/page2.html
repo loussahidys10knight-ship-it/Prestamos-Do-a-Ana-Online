@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="/css/styles-complete.css">
+</head>
+<body>
+
+<section class="login-bg">
+  <div class="login">
+    <img src="/img/logo-prestamos-dona-ana.png" alt="Préstamos Doña Ana Online" class="login-logo">
+    <h2>Iniciar sesión</h2>
+    <form class="login-formulario" id="formLogin" autocomplete="off">
+      <div class="campo">
+        <label for="login-email">Correo electrónico</label>
+        <input type="email" id="login-email" name="email" data-validar="email" required placeholder="ejemplo@correo.com">
+        <span class="error-msg"></span>
+      </div>
+      <div class="campo">
+        <label for="login-password">Contraseña</label>
+        <input type="password" id="login-password" name="password" required placeholder="Tu contraseña">
+        <span class="error-msg"></span>
+      </div>
+      <button type="submit">Ingresar</button>
+    </form>
+    <p class="login-opciones login-recuperar">
+      <a href="#" id="abrirRecuperacion">Olvide mi contrasena</a>
+    </p>
+    <form class="login-formulario recuperacion-formulario" id="formRecuperacion" autocomplete="off" style="display: none;">
+      <div class="campo" id="grupoEmailRecuperacion">
+        <label for="recuperacion-email">Correo electronico</label>
+        <input type="email" id="recuperacion-email" name="email" data-validar="email" placeholder="ejemplo@correo.com">
+        <span class="error-msg"></span>
+      </div>
+      <div id="grupoCodigoRecuperacion" style="display: none;">
+        <div class="campo">
+          <label for="recuperacion-codigo">Codigo recibido</label>
+          <input type="text" id="recuperacion-codigo" name="codigo" data-validar="soloNumeros" maxlength="6" placeholder="000000">
+          <span class="error-msg"></span>
+        </div>
+        <div class="campo">
+          <label for="recuperacion-password">Nueva contrasena</label>
+          <input type="password" id="recuperacion-password" name="password" data-validar="contrasena" placeholder="Nueva contrasena">
+          <span class="error-msg"></span>
+        </div>
+        <div class="campo">
+          <label for="recuperacion-confirm-password">Confirmar contrasena</label>
+          <input type="password" id="recuperacion-confirm-password" name="confirmPassword" placeholder="Repite la contraseña">
+          <span class="error-msg"></span>
+        </div>
+      </div>
+      <button type="submit" id="btnRecuperacion">Enviar codigo</button>
+      <button type="button" class="btn-secundario" id="cancelarRecuperacion">Cancelar</button>
+      <p class="success" id="mensajeRecuperacion"></p>
+    </form>
+    <p class="login-opciones">
+      ¿No tienes cuenta? <a href="page3.html">Regístrate</a>
+    </p>
+  </div>
+</section>
+
+<script src="/JavaScript/validation.js"></script>
+<script src="/JavaScript/api-client.js"></script>
+<script src="/JavaScript/user-manager.js"></script>
+<script src="/JavaScript/loan-manager.js"></script>
+<script src="/JavaScript/modal-render.js"></script>
+<script src="/JavaScript/events.js"></script>
+<script src="/JavaScript/email-notifications.js"></script>
+<script src="/JavaScript/page-login.js"></script>
+
+</body>
+</html>

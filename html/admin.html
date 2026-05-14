@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <link rel="stylesheet" href="/css/styles-complete.css">
+</head>
+<body class="admin-body">
+
+<header class="admin-header">
+  <div class="admin-header-contenido">
+    <div>
+      <p class="admin-etiqueta">Administración</p>
+      <h1>Panel de préstamos</h1>
+    </div>
+    <a href="/Index.html" class="btn-secundario admin-volver">Volver al portal</a>
+  </div>
+</header>
+
+<main class="admin-layout">
+  <section class="admin-resumen" aria-label="Resumen administrativo">
+    <article>
+      <span id="totalPendientes">0</span>
+      <p>Préstamos pendientes</p>
+    </article>
+    <article>
+      <span id="totalAprobados">0</span>
+      <p>Préstamos aprobados</p>
+    </article>
+    <article>
+      <span id="totalReprobados">0</span>
+      <p>Préstamos reprobados</p>
+    </article>
+    <article>
+      <span id="totalCuentas">0</span>
+      <p>Cuentas registradas</p>
+    </article>
+  </section>
+
+  <section class="admin-panel">
+    <div class="admin-panel-header">
+      <div>
+        <h2>Prestamos revisados</h2>
+        <p>Consulta los prestamos que ya fueron aprobados o reprobados.</p>
+      </div>
+    </div>
+
+    <div class="admin-tabla-contenedor">
+      <table class="admin-tabla">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Monto</th>
+            <th>Plazo</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Solicitud</th>
+          </tr>
+        </thead>
+        <tbody id="tablaPrestamosRevisados"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="admin-panel">
+    <div class="admin-panel-header">
+      <div>
+        <h2 class="titulo-con-badge">Préstamos pendientes <span id="badgePendientesPanel" class="badge-pendientes-admin">0</span></h2>
+        <p>Revisa cada solicitud antes de aprobarla o reprobarla.</p>
+      </div>
+    </div>
+
+    <div class="admin-tabla-contenedor">
+      <table class="admin-tabla">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Monto</th>
+            <th>Plazo</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaPrestamosPendientes"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="admin-panel">
+    <div class="admin-panel-header">
+      <div>
+        <h2>Cuentas registradas</h2>
+        <p>Administra el acceso de los usuarios del portal.</p>
+      </div>
+    </div>
+
+    <div class="admin-tabla-contenedor">
+      <table class="admin-tabla">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaCuentasRegistradas"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script src="/JavaScript/api-client.js"></script>
+<script src="/JavaScript/admin-manager.js"></script>
+</body>
+</html>
